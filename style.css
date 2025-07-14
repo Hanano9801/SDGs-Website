@@ -4,7 +4,7 @@
 /* --- 기본 스타일 --- */
 :root {
     --background-color: #E0FFFF; /* 스카이시안 */
-    --primary-color: #4169E1; /* 스카이시안 */
+    --primary-color: #4169E1; /* 로얄블루 */
     --secondary-color: #28a745; /* 녹색 */
     --dark-color: #343a40; /* 어두운 회색 */
     --light-color: #f8f9fa; /* 밝은 회색 */
@@ -21,7 +21,7 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Jua', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--light-color);
@@ -41,7 +41,7 @@ h1, h2, h3 {
 
 h1 { font-size: 2.8rem; }
 h2 { font-size: 2.2rem; }
-h3 { font-size: 1.8rem; }
+h3 { font-size: 2rem; }
 
 p {
     margin-bottom: 15px;
@@ -246,103 +246,87 @@ section:nth-of-type(even) { /* 짝수 번째 섹션 배경색 변경 */
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
+    font-size: 1.3rem;
 }
 
-/* --- Skills 섹션 --- */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 최소 너비를 280px로 약간 늘림 */
-    gap: 30px;
-    margin-top: 50px;
+/* --- Skills 섹션 (버튼 + 단일 내용 디스플레이) --- */
+.skill-tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* 모바일에서 버튼이 줄바꿈 되도록 */
 }
 
-/* 3D 플립 컨테이너 */
-.skill-item {
-    background-color: transparent; /* 배경색은 내부 카드가 담당 */
-    height: 250px; /* 카드 높이 고정 (뒷면 내용 고려) */
-    perspective: 1000px; /* 3D 효과를 위한 원근법 설정 */
-    border-radius: var(--border-radius); /* skill-item 자체는 모서리가 둥글지 않게 */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* 그림자는 skill-item에 유지 */
-    overflow: hidden; /* 모서리 둥근 효과를 위해 오버플로우 숨김 */
-}
-
-/* 카드 안쪽 (회전할 요소) */
-.skill-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s; /* 회전 애니메이션 속도 */
-    transform-style: preserve-3d; /* 3D 변환을 위한 설정 */
-    border-radius: var(--border-radius); /* inner 카드에 둥근 모서리 적용 */
-}
-
-/* hover 시 뒤집기 */
-.skill-item:hover .skill-card-inner {
-    transform: rotateY(180deg);
-}
-
-/* 앞면과 뒷면 공통 스타일 */
-.skill-front, .skill-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* 뒷면이 보이지 않도록 숨김 */
-    backface-visibility: hidden; /* 뒷면이 보이지 않도록 숨김 */
-    border-radius: var(--border-radius);
-    display: flex; /* 내부 컨텐츠를 중앙 정렬하기 위해 flexbox 사용 */
-    flex-direction: column; /* 세로 정렬 */
-    justify-content: center; /* 세로 중앙 정렬 */
-    align-items: center; /* 가로 중앙 정렬 */
-    padding: 20px;
-    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
-}
-
-/* 앞면 스타일 */
-.skill-front {
-    background-color: var(--white-color);
-    color: var(--dark-color);
-}
-
-.skill-front i {
-    font-size: 3.5rem;
+.skill-tab-btn {
+    background-color: var(--light-color);
+    border: 2px solid var(--primary-color);
     color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+    white-space: nowrap; /* 버튼 텍스트가 줄바꿈되지 않도록 */
+}
+
+.skill-tab-btn:hover {
+    background-color: #e2f0ff; /* hover 시 배경색 변경 */
+}
+
+.skill-tab-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.skill-tab-btn.active:hover {
+    background-color: #0056b3; /* active 상태에서 hover 시 */
+}
+
+.skill-content-display {
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    background-color: var(--white-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    min-height: 400px; /* 내용 영역의 최소 높이 설정 */
+    display: flex; /* 내부 컨텐츠 중앙 정렬 */
+    align-items: flex-start; /* 내용을 상단에 정렬 */
+    justify-content: center;
+    overflow: hidden; /* transition을 위해 필요 */
+    position: relative; /* 자식 요소의 absolute를 위해 */
+    text-align: left; /* 내용이 왼쪽 정렬되도록 */
+}
+
+/* 스킬 상세 내용 (skill-content-display 내부) */
+.skill-detail-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 부드러운 나타나기 효과 */
+    display: none; /* 기본적으로 모두 숨김 */
+    width: 100%; /* 부모의 너비를 따르도록 */
+}
+
+.skill-detail-content.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block; /* 활성화된 내용만 표시 */
+}
+
+.skill-detail-content h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.8rem; /* 제목 크기 조절 */
+}
+
+.skill-detail-content p {
+    font-size: 1.3rem; /* 설명 폰트 크기 조절 */
+    line-height: 1.6;
     margin-bottom: 15px;
 }
-
-.skill-front h3 {
-    color: var(--dark-color);
-    margin-bottom: 0; /* h3 기본 margin-bottom 재정의 */
-}
-
-/* 뒷면 스타일 */
-.skill-back {
-    background-color: var(--primary-color); /* 뒤집혔을 때 보일 색상 */
-    color: var(--white-color);
-    transform: rotateY(180deg); /* 초기에는 뒤집혀서 숨겨져 있음 */
-}
-
-.skill-back h3 {
-    color: var(--white-color); /* 뒷면 제목 색상 */
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.skill-back p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 0;
-}
-
-/* 아이콘 색상 일관성을 위한 추가 */
-.skill-item .skill-back i {
-    color: var(--white-color); /* 뒷면에 아이콘이 있다면 흰색으로 */
-}
-
-/* 기존 skill-item hover transform은 이제 inner 카드에 적용되므로 삭제 */
-/* .skill-item:hover {
-    transform: translateY(-10px);
-} */
 
 /* --- Projects 섹션 --- */
 .project-grid {
@@ -379,7 +363,7 @@ section:nth-of-type(even) { /* 짝수 번째 섹션 배경색 변경 */
 
 .project-item p {
     padding: 0 20px 15px;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
 }
 
 .project-links {
@@ -391,7 +375,7 @@ section:nth-of-type(even) { /* 짝수 번째 섹션 배경색 변경 */
 
 .project-btn {
     padding: 8px 15px;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     border-radius: 5px;
     box-shadow: none; /* 프로젝트 버튼은 그림자 제거 */
 }
@@ -457,6 +441,20 @@ footer {
     .hamburger {
         display: block; /* 햄버거 아이콘 보이기 */
     }
+
+    /* Skills 섹션 반응형 (992px 이하) */
+    .skill-tab-buttons {
+        flex-direction: column; /* 모바일에서 버튼 세로 정렬 */
+        align-items: center;
+    }
+    .skill-tab-btn {
+        width: 80%; /* 모바일에서 버튼 너비 조절 */
+        max-width: 250px;
+    }
+    .skill-content-display {
+        padding: 20px; /* 모바일에서 영역 패딩 조절 */
+        min-height: 350px; /* 모바일에서 최소 높이 조절 */
+    }
 }
 
 @media (max-width: 768px) {
@@ -497,5 +495,15 @@ footer {
     }
     .project-links {
         justify-content: center;
+    }
+    /* Skills 섹션 반응형 (576px 이하) */
+    .skill-tab-btn {
+        width: 90%; /* 더 작은 화면에서 버튼 너비 더 늘리기 */
+    }
+    .skill-detail-content h3 {
+        font-size: 1.6rem;
+    }
+    .skill-detail-content p {
+        font-size: 0.95rem;
     }
 }

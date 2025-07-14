@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanako의 포트폴리오</title>
+    <title>지속 가능한 도시</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
     <header id="main-header">
         <div class="container">
-            <h1 class="logo">Hanako</h1>
+            <h1 class="logo">학교보내조</h1>
             <nav id="main-nav">
-                <ul class="nav-links">  
+                <ul class="nav-links">
                     <li><a href="#home">홈</a></li>
                     <li><a href="#about">소개</a></li>
                     <li><a href="#skills">기술</a></li>
@@ -31,8 +33,9 @@
     <main>
         <section id="home" class="hero">
             <div class="container hero-content">
-                <img src="images/DenO.jpg" alt="프로필 사진" class="profile-img"> <h1>안녕하세요, 저는 <span class="highlight">Hanako</span>입니다.</h1>
-                <p class="tagline">새로운 것을 배우고 만드는 것을 즐기는 프론트엔드 개발자입니다.</p>
+                <img src="images/DenO.jpg" alt="프로필 사진" class="profile-img">
+                <h1>안녕하세요, <span class="highlight">학교보내조</span>입니다.</h1>
+                <p class="tagline">비판적 사고, 세계시민 의식, 언어 교육으로 지속가능한 울산을 만듭니다.</p>
                 <a href="#projects" class="btn primary-btn">내 작업 보기</a>
                 <a href="#contact" class="btn secondary-btn">연락하기</a>
             </div>
@@ -40,120 +43,75 @@
 
         <section id="about" class="about-me">
             <div class="container">
-                <h2>나를 소개합니다.</h2>
+                <h2><span class="highlight">지속가능한 울산의 미래, 언어 교육에서 시작됩니다.</span></h2>
                 <div class="about-content">
-                    <p>안녕하세요! 저는 웹 개발의 매력에 푹 빠져 있는 <span class="highlight">Hanako</span>입니다. 사용자 경험을 최우선으로 생각하며, 깔끔하고 효율적인 코드를 작성하는 것을 목표로 합니다. 특히 자바스크립트를 활용하여 동적인 웹 애플리케이션을 만드는 것에 큰 흥미를 느끼고 있습니다.</p>
-                    <p>항상 새로운 기술과 트렌드를 학습하며 성장하고 있으며, 팀원들과의 협업을 통해 시너지를 내는 것을 중요하게 생각합니다. 문제 해결 능력을 바탕으로 다양한 도전을 즐기며, 더 나은 웹 환경을 만들기 위해 끊임없이 노력하고 있습니다.</p>
+                    <p>변화하는 시대 속, 우리 도시 울산은 새로운 도전에 직면하고 있습니다. 기후 위기, 사회적 격차, 그리고 다양해지는 문화 속에서 우리는 어떻게 함께 살아가야 할까요? '언어'는 단순한 소통 도구를 넘어, 세상을 이해하고 문제를 해결하며 더 나은 미래를 만들어가는 강력한 힘을 가지고 있습니다.</p>
+                    <p>저희는 언어 교육을 통해 비판적으로 사고하고, 세계 시민으로서 소통하며, 지속가능한 도시 울산을 만들어갈 방안을 함께 탐색하고자 합니다. 저희의 연구가 어떻게 울산 시민의 인식을 변화시키고, 능동적인 참여를 이끌어내며, 궁극적으로 지속가능한 울산의 내일을 열어갈지 함께 지켜봐 주십시오.</p>
                 </div>
             </div>
         </section>
 
-       <section id="skills" class="skills">
-    <div class="container">
-        <h2>기술 스택</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <div class="skill-card-inner">
-                    <div class="skill-front">
-                        <i class="fab fa-html5"></i>
-                        <h3>HTML5</h3>
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2>세부 탐구 주제</h2>
+
+                <div class="skill-tab-buttons">
+                    <button class="skill-tab-btn active" data-content-id="frontend-description">언어 능력과 시민 참여의 관계</button>
+                    <button class="skill-tab-btn" data-content-id="backend-description">국어 교육과 비판적 사고 능력</button>
+                    <button class="skill-tab-btn" data-content-id="devops-description">영어 교육과 세계 시민적 사고 능력</button>
+                    <button class="skill-tab-btn" data-content-id="etc-description">언어 교육을 통한 지속가능성</button>
+                </div>
+
+                <div class="skill-content-display">
+                    <div id="frontend-description" class="skill-detail-content active">
+                        <h3>언어 능력과 시민 참여의 관계</h3>
+                        <p>언어 능력은 개인이 자신의 생각을 표현하고 타인의 의견을 이해하며 공적 담론에 참여하는 데 필수적이며, 국어와 영어 교육은 공동체 소속감과 시민의식을 높이는 중요한 수단이다. 실제로 한국어 능력이 높은 결혼이민여성일수록 공동체 의식이 강했고, 합리적 의사소통 교육은 공적 참여를 촉진한다는 연구도 있다. 학교에서는 토론, 학급회의, 역할극 등을 통해 창의적 사고력과 의사소통 역량을 기르며, 영어 등 외국어 교육은 글로벌 시민성 함양에 기여한다. 반면 언어 능력이 부족한 사람은 정보 접근과 사회 참여에서 소외되기 쉽고, 이주민이나 문해력 취약층은 투표 등 민주적 활동에도 어려움을 겪는다. 이러한 문제를 해결하기 위해 국내외에서는 언어 교육과 시민성 교육을 연계한 정책을 시행하고 있으며, 울산시 교육청, 미국 C3 교육과정, 독일 보이텔스바흐 협약 등의 사례가 있다. 이처럼 언어 교육은 비판적 사고력과 시민 참여 능력을 키워 지속가능한 민주 사회를 실현하는 데 핵심적인 역할을 한다.</p>
                     </div>
-                    <div class="skill-back">
-                        <h3>HTML5</h3>
-                        <p>웹 표준에 맞는 시맨틱 마크업 작성 능력과 웹 접근성을 고려한 구조를 설계합니다.</p>
+
+                    <div id="backend-description" class="skill-detail-content">
+                        <h3>국어 교육과 비판적 사고 능력 및 토론 능력의 관계</h3>
+                        <p> 현대 국어 교육은 단순히 언어 지식 습득을 넘어 비판적 사고 능력과 토론 능력 함양에 중점을 둔다. 문법 교육은 언어 사용에 내재된 권력 관계를 비판적으로 분석하는 능력을 길러준다. 또한 문학 교육은 작품 분석과 성찰을 통해 학생들의 비판적 사고를 심화시킨다. 이 두 영역은 상호 보완적으로 작용하여 학생들의 사고력을 강화하는 역할을 한다. 토론 교육은 논리적 주장, 경청, 공감을 포함한 종합적인 의사소통 능력을 길러주는 데 집중한다. 나아가 국어 교육은 텍스트나 사회 현상의 숨겨진 의미를 분석하는 비판적 리터러시를 함양한다. 궁극적으로 심미적 리터러시를 통해 '분산적 보편주의'를 실현하며 학생들이 세계 시민으로서 성장하도록 기여한다.</p>
+                    </div>
+
+                    <div id="devops-description" class="skill-detail-content">
+                        <h3>영어 교육과 세계 시민적 사고 능력의 관계</h3>
+                        <p>영어는 국제 공용어로서 다양한 글로벌 정보에 접근할 수 있는 통로가 되며, 영어 능력은 기후위기, 인권 등 세계적 이슈에 대한 이해와 다문화 감수성 향상에 기여한다. 실제 연구에 따르면 영어 실력이 높을수록 다양한 문화에 대한 이해도와 존중 태도가 함께 향상되고, 비판적 사고력도 함께 길러진다. 우리 학교 김은진 영어 선생님은 “영어는 단순한 언어가 아니라 사회 문제와 역사까지 함께 배우는 창구”라며, 학생들이 세계적 맥락 속에서 사고할 수 있도록 지도하고 있다고 밝히셨다. 국내 영어 수업에서는 SDGs, 인권, 환경 등의 주제를 영어로 탐구하고 토론하는 융합형 수업이 확대되고 있으며, 학생들은 영어 말하기 능력과 세계시민 의식을 동시에 키우고 있다. 또한 영어 실력은 국제 담론 참여의 기반이 되어, 학생들이 글로벌 포럼, NGO 활동, 국제 캠프 등에서 활발히 소통할 수 있도록 돕는다. 종합하면, 영어 능력은 세계 이슈에 대한 인식과 문화 간 이해력을 높이고, 학생들이 국제사회에 능동적으로 참여할 수 있는 기반을 마련해주는 중요한 교육 도구다.</p>
+                    </div>
+
+                    <div id="etc-description" class="skill-detail-content">
+                        <h3>언어 교육을 통한 지속가능성, 공공의식 교육 방안</h3>
+                        <p>이 프로젝트는 학생들이 SDGs 주제로 한국어와 영어 디지털 매거진을 제작하며 언어 능력과 시민의식을 함께 키우는 활동이다. 기사, 인터뷰, 인포그래픽 등을 만들며 비판적 사고와 협업 능력을 기르고, Canva, Notion 등 도구를 활용해 결과물을 실제로 공유한다. 연령과 수준에 따라 조정 가능하며 다양한 교과와 융합해 활용할 수 있다. 이 프로젝트는 언어역량과 지속가능성 교육을 결합해 실천적 언어 사용을 강화하고, 사회 참여 경험을 통해 공공의식을 기르며, 다양한 연령과 수준에 맞춰 확장 가능하다는 점에서 중요하다.</p>
                     </div>
                 </div>
             </div>
-            <div class="skill-item">
-                <div class="skill-card-inner">
-                    <div class="skill-front">
-                        <i class="fab fa-css3-alt"></i>
-                        <h3>CSS3</h3>
-                    </div>
-                    <div class="skill-back">
-                        <h3>CSS3</h3>
-                        <p>Flexbox와 Grid를 활용한 반응형 웹 디자인, 애니메이션 및 전환 효과 구현이 가능합니다.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-card-inner">
-                    <div class="skill-front">
-                        <i class="fab fa-js"></i>
-                        <h3>JavaScript (ES6+)</h3>
-                    </div>
-                    <div class="skill-back">
-                        <h3>JavaScript (ES6+)</h3>
-                        <p>DOM 조작, 비동기 처리, ES6+ 문법을 활용한 동적인 웹 애플리케이션 개발이 가능합니다.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-card-inner">
-                    <div class="skill-front">
-                        <i class="fab fa-git-alt"></i>
-                        <h3>Git & GitHub</h3>
-                    </div>
-                    <div class="skill-back">
-                        <h3>Git & GitHub</h3>
-                        <p>Git을 이용한 버전 관리 및 GitHub를 통한 협업 경험이 있습니다.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-card-inner">
-                    <div class="skill-front">
-                        <i class="fas fa-terminal"></i>
-                        <h3>문제 해결</h3>
-                    </div>
-                    <div class="skill-back">
-                        <h3>문제 해결</h3>
-                        <p>새로운 문제에 직면했을 때 적극적으로 정보를 탐색하고 해결책을 찾아냅니다.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-card-inner">
-                    <div class="skill-front">
-                        <i class="fas fa-users"></i>
-                        <h3>협업</h3>
-                    </div>
-                    <div class="skill-back">
-                        <h3>협업</h3>
-                        <p>팀원들과 효과적으로 소통하고 협력하여 프로젝트 목표를 달성하는 데 기여합니다.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <section id="projects" class="projects">
             <div class="container">
                 <h2>내 작업물</h2>
                 <div class="project-grid">
                     <div class="project-item">
-                        <img src="https://via.placeholder.com/400x250" alt="프로젝트 1 이미지"> <h3>투두리스트 앱</h3>
-                        <p>자바스크립트로 구현한 기본적인 투두리스트 웹 애플리케이션입니다. 항목 추가, 삭제, 완료 기능이 있습니다.</p>
+                        <img src="https://via.placeholder.com/400x250" alt="프로젝트 1 이미지">
+                        <h3>노션</h3>
+                        <p>연구의 모든 과정을 담았습니다.</p>
                         <div class="project-links">
-                            <a href="#" target="_blank" class="btn project-btn">데모 보기 <i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" target="_blank" class="btn project-btn">GitHub <i class="fab fa-github"></i></a>
+                            <a href="https://www.notion.so/22e3c5e3d2e5804a89cae631588812c0?source=copy_link" target="_blank" class="btn project-btn">바로가기 <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <div class="project-item">
-                        <img src="https://via.placeholder.com/400x250" alt="프로젝트 2 이미지"> <h3>반응형 랜딩 페이지</h3>
-                        <p>HTML과 CSS를 사용하여 다양한 화면 크기에서 최적화된 반응형 랜딩 페이지를 제작했습니다.</p>
+                        <img src="https://via.placeholder.com/400x250" alt="프로젝트 2 이미지">
+                        <h3>아트스탭스</h3>
+                        <p>연구 결과를 전시하고, 소개합니다.</p>
                         <div class="project-links">
-                            <a href="#" target="_blank" class="btn project-btn">데모 보기 <i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" target="_blank" class="btn project-btn">GitHub <i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" class="btn project-btn">바로가기 <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <div class="project-item">
-                        <img src="https://via.placeholder.com/400x250" alt="프로젝트 3 이미지"> <h3>날씨 정보 앱</h3>
+                        <img src="https://via.placeholder.com/400x250" alt="프로젝트 3 이미지">
+                        <h3>날씨 정보 앱</h3>
                         <p>외부 API를 활용하여 현재 날씨 정보를 가져와 보여주는 웹 애플리케이션입니다. 비동기 통신을 연습했습니다.</p>
                         <div class="project-links">
                             <a href="#" target="_blank" class="btn project-btn">데모 보기 <i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" target="_blank" class="btn project-btn">GitHub <i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -163,10 +121,9 @@
         <section id="contact" class="contact">
             <div class="container">
                 <h2>저에게 연락하세요.</h2>
-                <p>함께 멋진 프로젝트를 만들고 싶으시거나 궁금한 점이 있으시다면 언제든지 연락 주세요!</p>
+                <p>궁금한 점이 있으시다면 언제든지 연락 주세요</p>
                 <div class="contact-info">
                     <p><i class="fas fa-envelope"></i> 이메일: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-                    <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
                     <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/your-username" target="_blank">linkedin.com/in/your-username</a></p>
                 </div>
                 </div>
@@ -175,7 +132,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 <span class="highlight">Hanako</span>. All Rights Reserved.</p>
+            <p>&copy; 2025 <span class="highlight">학교보내조</span>. All Rights Reserved.</p>
         </div>
     </footer>
 
